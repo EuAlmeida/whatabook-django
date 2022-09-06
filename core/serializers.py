@@ -7,3 +7,7 @@ class categoriaSerializer(ModelSerializer):
     class Meta:
         model = categoria
         fields = "__all__"
+class editoraSerializer(ModelSerializer):
+    class Meta:
+        model = editora
+        fields = "__all__"
