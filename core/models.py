@@ -1,9 +1,9 @@
 from django.db import models
 
-class Livro(models.Model):
+class livro(models.Model):
     id_livro = models.AutoField(primary_key=True)
     titulo_livro = models.CharField(max_length=100)
-    sinopse_livro = models.CharField(max_length=1000, null=False)
+    sinopse_livro = models.TextField(null=False)
     qtd_paginas = models.PositiveIntegerField(null=False)
     ano_lancamento = models.DateField(null=False)
     url_compra = models.URLField(null=False)
@@ -25,5 +25,10 @@ class user(models.Model):
 
     def __str__(self):
         return self.nome_usuario
+
+class categoria(models.Model):
+    id_categoria = models.AutoField(primary_key=True)
+    nome_categoria = models.CharField(max_length=30)
+    desc_categoria = models.TextField()
 
 
