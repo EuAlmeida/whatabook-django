@@ -17,10 +17,14 @@ class user(models.Model):
         return self.nome_usuario
 
 
+
 class categoria(models.Model):
     id_categoria = models.AutoField(primary_key=True, null=False)
     nome_categoria = models.CharField(max_length=30, null=False)
     desc_categoria = models.TextField(null=False)
+
+    def __str__(self):
+        return self.nome_categoria
 
 
 class autor(models.Model):
@@ -73,4 +77,11 @@ class listafav(models.Model):
     desc_lista = models.TextField(null=False)
     user_lista = models.ForeignKey(user, on_delete=models.PROTECT, related_name="Lista")
     livros_lista = models.ManyToManyField(livro, related_name="lista_livro")
-    
+
+
+
+class resenha(models.Model):
+    id_lista = models.AutoField(primary_key=True)
+    titulo_resenha = models.CharField(max_length=100, null=False)
+    desc_resenha = models.TextField(null=False)
+    livro_resenha = models.ForeignKey(livro, on_delete=models.PROTECT, related_name="resenha")
