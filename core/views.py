@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
 
-from core.models import categoria, livro, editora, autor, user
+from core.models import categoria, listafav, livro, editora, autor, resenha, user
 
-from core.serializers import autorSerializer, categoriaSerializer, editoraSerializer, livroSerializer, livrodetailSerializer, userSerializer
+from core.serializers import autorSerializer, categoriaSerializer, editoraSerializer, listafavSerializer, listafavdetailSerializer, livroSerializer, livrodetailSerializer, resenhaSerializer, resenhadetailSerializer, userSerializer
 
 
 class categoriaViewSet(ModelViewSet):
@@ -30,3 +30,19 @@ class autorViewSet(ModelViewSet):
 class userViewSet(ModelViewSet):
     queryset = user.objects.all()
     serializer_class = userSerializer
+
+class listafavViewSet(ModelViewSet):
+    queryset = listafav.objects.all()
+    serializer_class = listafavSerializer
+    queryset = listafav.objects.all()
+    def get_serializer_class(self):
+        if self.action in ['list', 'retrieve']:
+            return listafavdetailSerializer
+        return listafavSerializer
+
+class resenhaViewSet(ModelViewSet):
+    queryset = resenha.objects.all()
+    def get_serializer_class(self):
+        if self.action in ['list', 'retrieve']:
+            return resenhadetailSerializer
+        return resenhaSerializer

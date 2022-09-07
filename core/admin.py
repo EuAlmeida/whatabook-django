@@ -39,8 +39,10 @@ admin.site.register(editora, editoraAdmin)
 
 class listafavAdmin(admin.ModelAdmin):
     list_display = ("titulo_lista", "user_lista", "desc_lista")
+
 admin.site.register(listafav, listafavAdmin)
 
 class resenhaAdmin(admin.ModelAdmin):
     list_display = ("titulo_resenha", "livro_resenha")
+
 admin.site.register(resenha, resenhaAdmin)
