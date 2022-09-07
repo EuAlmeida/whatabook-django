@@ -60,9 +60,17 @@ class livro(models.Model):
     editora_livro = models.ForeignKey(
         editora, on_delete=models.PROTECT, related_name="livros"
     )
-    autor_livros = models.ForeignKey(
-        autor, on_delete=models.PROTECT, related_name="livros"
-    )
+    autor_livros = models.ManyToManyField(autor, related_name="livros")
+    categoria_livro = models.ManyToManyField(categoria, related_name="livros")
 
     def __str__(self):
         return self.titulo_livro
+
+
+class listafav(models.Model):
+    id_lista = models.AutoField(primary_key=True)
+    titulo_lista = models.CharField(max_length=100, null=False)
+    desc_lista = models.TextField(null=False)
+    user_lista = models.ForeignKey(user, on_delete=models.PROTECT, related_name="Lista")
+    livros_lista = models.ManyToManyField(livro, related_name="lista_livro")
+    
