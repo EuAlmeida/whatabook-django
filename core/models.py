@@ -60,8 +60,9 @@ class livro(models.Model):
     editora_livro = models.ForeignKey(
         editora, on_delete=models.PROTECT, related_name="livros"
     )
-    autor_livro = models.ForeignKey(
-        autor, on_delete=models.PROTECT, related_name="Livros"
+    autor_livros = models.ForeignKey(
+        autor, on_delete=models.PROTECT, related_name="livros"
     )
+
     def __str__(self):
         return self.titulo_livro

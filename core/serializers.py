@@ -18,6 +18,11 @@ class livroSerializer(ModelSerializer):
     class Meta:
         model = livro
         fields = "__all__"
+class livrodetailSerializer(ModelSerializer):
+    class Meta:
+        model = livro
+        fields = "__all__"
+        depth = 1
 
 class autorSerializer(ModelSerializer):
     class Meta:
