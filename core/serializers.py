@@ -24,4 +24,9 @@ class autorSerializer(ModelSerializer):
         model = autor
         fields = "__all__"
 
+class userSerializer(ModelSerializer):
+    class Meta:
+        model = user
+        fields = "__all__"
+
 
