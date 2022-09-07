@@ -67,6 +67,7 @@ class livro(models.Model):
     )
     autor_livros = models.ManyToManyField(autor, related_name="livros")
     categoria_livro = models.ManyToManyField(categoria, related_name="livros")
+    capa_livro = models.FileField(upload_to='images/')
 
     def __str__(self):
         return self.titulo_livro
