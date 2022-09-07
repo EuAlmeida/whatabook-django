@@ -1,5 +1,6 @@
 from tabnanny import verbose
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class user(models.Model):
@@ -85,3 +86,9 @@ class resenha(models.Model):
     titulo_resenha = models.CharField(max_length=100, null=False)
     desc_resenha = models.TextField(null=False)
     livro_resenha = models.ForeignKey(livro, on_delete=models.PROTECT, related_name="resenha")
+    nota_resenha = models.PositiveIntegerField( null=False,
+        validators=[
+            MaxValueValidator(5),
+            MinValueValidator(0)
+        ]
+    )
