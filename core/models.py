@@ -1,17 +1,6 @@
 from tabnanny import verbose
 from django.db import models
 
-class livro(models.Model):
-    id_livro = models.AutoField(primary_key=True)
-    titulo_livro = models.CharField(max_length=100)
-    sinopse_livro = models.TextField(null=False)
-    qtd_paginas = models.PositiveIntegerField(null=False)
-    ano_lancamento = models.DateField(null=False)
-    url_compra = models.URLField(null=False)
-    
-
-    def __str__(self):
-        return self.titulo_livro
 
 class user(models.Model):
     id_usuario = models.AutoField(primary_key=True)
@@ -27,10 +16,12 @@ class user(models.Model):
     def __str__(self):
         return self.nome_usuario
 
+
 class categoria(models.Model):
     id_categoria = models.AutoField(primary_key=True, null=False)
     nome_categoria = models.CharField(max_length=30, null=False)
     desc_categoria = models.TextField(null=False)
+
 
 class autor(models.Model):
     id_autor = models.AutoField(primary_key=True)
@@ -41,9 +32,10 @@ class autor(models.Model):
 
     def __str__(self):
         return self.nome_autor
-    
+
     class Meta:
         verbose_name_plural = "Autores"
+
 
 class editora(models.Model):
     id_editora = models.AutoField(primary_key=True)
@@ -58,7 +50,18 @@ class editora(models.Model):
         return self.nome_editora
 
 
-
-
-
-
+class livro(models.Model):
+    id_livro = models.AutoField(primary_key=True)
+    titulo_livro = models.CharField(max_length=100)
+    sinopse_livro = models.TextField(null=False)
+    qtd_paginas = models.PositiveIntegerField(null=False)
+    ano_lancamento = models.DateField(null=False)
+    url_compra = models.URLField(null=False)
+    editora_livro = models.ForeignKey(
+        editora, on_delete=models.PROTECT, related_name="livros"
+    )
+    autor_livro = models.ForeignKey(
+        autor, on_delete=models.PROTECT, related_name="Livros"
+    )
+    def __str__(self):
+        return self.titulo_livro
