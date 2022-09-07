@@ -1,3 +1,4 @@
+from distutils.command import upload
 from tabnanny import verbose
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
@@ -13,6 +14,7 @@ class user(models.Model):
     email_user = models.EmailField(null=False)
     senha_user = models.CharField(max_length=20)
     adm = models.BooleanField(null=False)
+    foto_perfil = models.ImageField (upload_to='fotoperfil/')
 
     def __str__(self):
         return self.nome_usuario
@@ -67,7 +69,7 @@ class livro(models.Model):
     )
     autor_livros = models.ManyToManyField(autor, related_name="livros")
     categoria_livro = models.ManyToManyField(categoria, related_name="livros")
-    capa_livro = models.FileField(upload_to='images/')
+    capa_livro = models.ImageField (upload_to='images/')
 
     def __str__(self):
         return self.titulo_livro
