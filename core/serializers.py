@@ -1,3 +1,4 @@
+from xml.parsers.expat import model
 from rest_framework.serializers import ModelSerializer
 
 from core.models import categoria, editora, livro, autor, user
@@ -15,6 +16,12 @@ class editoraSerializer(ModelSerializer):
 
 class livroSerializer(ModelSerializer):
     class Meta:
-        model = editora
+        model = livro
         fields = "__all__"
+
+class autorSerializer(ModelSerializer):
+    class Meta:
+        model = autor
+        fields = "__all__"
+
 

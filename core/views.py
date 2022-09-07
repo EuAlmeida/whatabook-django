@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
 
-from core.models import categoria, livro, user, editora, autor
+from core.models import categoria, livro, editora, autor
 
-from core.serializers import categoriaSerializer, editoraSerializer, livroSerializer
+from core.serializers import autorSerializer, categoriaSerializer, editoraSerializer, livroSerializer
 
 
 class categoriaViewSet(ModelViewSet):
@@ -18,3 +18,7 @@ class editoraViewSet(ModelViewSet):
 class livroViewSet(ModelViewSet):
     queryset = livro.objects.all()
     serializer_class = livroSerializer
+
+class autorViewSet(ModelViewSet):
+    queryset = autor.objects.all()
+    serializer_class = autorSerializer
