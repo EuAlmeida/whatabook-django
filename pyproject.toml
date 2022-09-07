@@ -8,6 +8,9 @@ authors = ["EuAlmeida <jvda.vitor.almeida@gmail.com>"]
 python = "^3.8"
 Django = "^4.1.1"
 djangorestframework = "^3.13.1"
+django-cors-headers = "^3.13.0"
+gunicorn = "^20.1.0"
+whitenoise = "^6.2.0"
 
 [tool.poetry.dev-dependencies]
 black = {version = "^22.8.0", allow-prereleases = true}
