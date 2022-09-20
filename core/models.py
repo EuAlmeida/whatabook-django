@@ -14,7 +14,7 @@ class user(models.Model):
     email_user = models.EmailField(null=False)
     senha_user = models.CharField(max_length=20)
     adm = models.BooleanField(null=False)
-    foto_perfil = models.ImageField (upload_to='fotoperfil/')
+    # foto_perfil = models.ImageField (upload_to='fotoperfil/')
 
     def __str__(self):
         return self.nome_usuario
