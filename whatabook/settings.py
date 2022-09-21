@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "rest_framework",
     'cpf_field',
+    'django_cpf_cnpj',
     "rest_framework_simplejwt",
     "core",
 ]

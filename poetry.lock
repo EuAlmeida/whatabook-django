@@ -99,6 +99,33 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "django-cpf-cnpj"
+version = "1.0.0"
+description = "A django model and form field for normalised cpf and cnpj."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+Django = ">=2.2"
+
+[[package]]
+name = "django-phonenumber-field"
+version = "7.0.0"
+description = "An international phone number field for django models."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+Django = ">=3.2"
+phonenumberslite = {version = ">=7.0.2", optional = true, markers = "extra == \"phonenumberslite\""}
+
+[package.extras]
+phonenumbers = ["phonenumbers (>=7.0.2)"]
+phonenumberslite = ["phonenumberslite (>=7.0.2)"]
+
+[[package]]
 name = "djangorestframework"
 version = "3.13.1"
 description = "Web APIs for Django, made easy."
@@ -159,6 +186,14 @@ description = "Utility library for gitignore style pattern matching of file path
 category = "dev"
 optional = false
 python-versions = ">=3.7"
+
+[[package]]
+name = "phonenumberslite"
+version = "8.12.55"
+description = "Python version of Google's common library for parsing, formatting, storing and validating international phone numbers."
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "pillow"
@@ -252,7 +287,7 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "b6d5362f2d2c38377dd872703fe618638b827a0906bd39bf0f82a734450670eb"
+content-hash = "13665fa055fc23a566c8c6cea4ee16b61b953c1aa5f274a8ef24e3ca5512b481"
 
 [metadata.files]
 asgiref = []
@@ -263,11 +298,14 @@ colorama = []
 django = []
 django-cors-headers = []
 django-cpf = []
+django-cpf-cnpj = []
+django-phonenumber-field = []
 djangorestframework = []
 djangorestframework-simplejwt = []
 gunicorn = []
 mypy-extensions = []
 pathspec = []
+phonenumberslite = []
 pillow = []
 platformdirs = []
 pyjwt = []
