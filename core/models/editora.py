@@ -1,5 +1,7 @@
 from django.db import models
+
 from django_cpf_cnpj.fields import CNPJField
+
 
 class editora(models.Model):
     id_editora = models.AutoField(primary_key=True)

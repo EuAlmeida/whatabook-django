@@ -1,7 +1,9 @@
 from django.db import models
+
 from .autor import autor
 from .categoria import categoria
 from .editora import editora
+
 
 class livro(models.Model):
 

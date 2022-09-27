@@ -1,5 +1,7 @@
 from django.db import models
+
 from .livro import livro
+
 
 class resenha(models.Model):
     nota_choices = (

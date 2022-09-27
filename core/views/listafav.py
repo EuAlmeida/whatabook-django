@@ -1,7 +1,8 @@
 from rest_framework.viewsets import ModelViewSet
-from core.models import listafav
 
-from core.serializers import listafavSerializer,listafavdetailSerializer
+from core.models import listafav
+from core.serializers import listafavdetailSerializer, listafavSerializer
+
 
 class listafavViewSet(ModelViewSet):
     queryset = listafav.objects.all()

@@ -1,8 +1,8 @@
-from rest_framework.viewsets import ModelViewSet 
+from rest_framework.viewsets import ModelViewSet
 
 from core.models import livro
+from core.serializers import livrodetailSerializer, livroSerializer
 
-from core.serializers import livroSerializer, livrodetailSerializer
 
 class livroViewSet(ModelViewSet):
     queryset = livro.objects.all()

@@ -1,8 +1,8 @@
 from rest_framework.viewsets import ModelViewSet
 
 from core.models import resenha
+from core.serializers import resenhadetailSerializer, resenhaSerializer
 
-from core.serializers import resenhaSerializer, resenhadetailSerializer
 
 class resenhaViewSet(ModelViewSet):
     queryset = resenha.objects.all()

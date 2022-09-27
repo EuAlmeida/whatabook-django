@@ -1,6 +1,7 @@
 from django.db import models
-from .user import user
+
 from .livro import livro
+from .user import user
 
 
 class listafav(models.Model):

@@ -1,7 +1,7 @@
 from .autor import autorSerializer
 from .categoria import categoriaSerializer
 from .editora import editoraSerializer
-from .listafav import listafavSerializer, listafavdetailSerializer
-from .livro import livroSerializer,livrodetailSerializer
-from .resenha import resenhaSerializer, resenhadetailSerializer
+from .listafav import listafavdetailSerializer, listafavSerializer
+from .livro import livrodetailSerializer, livroSerializer
+from .resenha import resenhadetailSerializer, resenhaSerializer
 from .user import userSerializer

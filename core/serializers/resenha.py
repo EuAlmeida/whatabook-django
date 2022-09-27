@@ -1,5 +1,7 @@
 from rest_framework.serializers import ModelSerializer
+
 from core.models import resenha
+
 
 class resenhaSerializer(ModelSerializer):
     class Meta:

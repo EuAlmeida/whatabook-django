@@ -2,7 +2,6 @@
 import os
 from pathlib import Path
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -26,6 +25,7 @@ INSTALLED_APPS = [
     "rest_framework",
     'cpf_field',
     'django_cpf_cnpj',
+    "drf_spectacular",
     "rest_framework_simplejwt",
     "core",
 ]
@@ -129,5 +129,12 @@ REST_FRAMEWORK = {
     ],
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
-    )
+    ),
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Whatabook API",
+    "DESCRIPTION": "API para gerenciamento do Sistema WhataBook, incluindo endpoints e documentação.",
+    "VERSION": "1.0.0",
 }
