@@ -10,7 +10,7 @@ SECRET_KEY = "django-insecure-pyjo8d5z7dm-ff^=ud#1!^ww(w-s5zs5szivw%^--rk!$e@t_4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*", "https://web-production-5764.up.railway.app/"]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -41,7 +41,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
-CSRF_TRUSTED_ORIGINS = ["https://web-production-5764.up.railway.app/","https://railway.app/" ]
 
 ROOT_URLCONF = "whatabook.urls"
 
