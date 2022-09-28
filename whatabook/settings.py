@@ -138,3 +138,5 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "API para gerenciamento do Sistema WhataBook, incluindo endpoints e documentação.",
     "VERSION": "1.0.0",
 }
+
+CSRF_TRUSTED_ORIGINS = ['https://whatabook-django-production.up.railway.app','https://*.127.0.0.1']
