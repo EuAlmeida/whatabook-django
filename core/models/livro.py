@@ -6,8 +6,6 @@ from .editora import editora
 
 
 class livro(models.Model):
-
-    id_livro = models.AutoField(primary_key=True)
     titulo_livro = models.CharField(max_length=100)
     sinopse_livro = models.TextField(null=False)
     qtd_paginas = models.PositiveIntegerField(null=False)

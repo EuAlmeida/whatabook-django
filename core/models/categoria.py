@@ -2,7 +2,6 @@ from django.db import models
 
 
 class categoria(models.Model):
-    id_categoria = models.AutoField(primary_key=True, null=False)
     nome_categoria = models.CharField(max_length=30, null=False)
     desc_categoria = models.TextField(null=False)
 

@@ -139,4 +139,4 @@ SPECTACULAR_SETTINGS = {
     "VERSION": "1.0.0",
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://whatabook-django-production.up.railway.app','https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://*.up.railway.app','https://*.127.0.0.1']
