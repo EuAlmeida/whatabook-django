@@ -9,7 +9,6 @@ class userAdmin(UserAdmin):
     fieldsets = (
         (None, {"fields": ("username", "password")}),
         (_("Personal info"), {"fields": ("first_name", "last_name", "email")}),
-        ("Informações adicionais", {"fields": ("cpf", "rg")}),
         (
             _("Permissions"),
             {
