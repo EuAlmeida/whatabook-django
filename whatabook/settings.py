@@ -68,12 +68,8 @@ WSGI_APPLICATION = "whatabook.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "railway",
-        "USER": "postgres",
-        "PASSWORD": "MYLNzfBxozcvMNFazow0",
-        "HOST": "containers-us-west-68.railway.app",
-        "PORT": "6866",
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
