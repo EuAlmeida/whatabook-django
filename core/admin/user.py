@@ -5,10 +5,10 @@ from django.utils.translation import gettext_lazy as _
 from core.models import user
 
 
-class userAdmin(UserAdmin):
+class UsuarioAdmin(UserAdmin):
     fieldsets = (
         (None, {"fields": ("username", "password")}),
-        (_("Personal info"), {"fields": ("first_name", "last_name", "email")}),
+        (_("Personal info"), {"fields": ("first_name", "last_name", "email", "cpf", "telefone", "data_nascimento")}),
         (
             _("Permissions"),
             {
@@ -24,4 +24,4 @@ class userAdmin(UserAdmin):
         (_("Important dates"), {"fields": ("last_login", "date_joined")}),
     )
 
-admin.site.register(user,userAdmin)
+admin.site.register(user,UsuarioAdmin)
