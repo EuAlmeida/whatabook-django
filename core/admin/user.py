@@ -4,7 +4,6 @@ from django.utils.translation import gettext_lazy as _
 
 from core.models import user
 
-
 class userAdmin(UserAdmin):
     fieldsets = (
         (None, {"fields": ("username", "password")}),
@@ -23,5 +22,6 @@ class userAdmin(UserAdmin):
         ),
         (_("Important dates"), {"fields": ("last_login", "date_joined")}),
     )
+
 
 admin.site.register(user,userAdmin)
