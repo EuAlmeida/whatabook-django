@@ -12,3 +12,4 @@ class autor(models.Model):
 
     class Meta:
         verbose_name_plural = "Autores"
+
