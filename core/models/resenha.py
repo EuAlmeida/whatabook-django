@@ -19,7 +19,3 @@ class resenha(models.Model):
         livro, on_delete=models.PROTECT, related_name="resenha"
     )
     nota_resenha = models.IntegerField(null=False, choices=nota_choices)
-    user_lista = models.ForeignKey(
-        user, on_delete=models.PROTECT, related_name="resenha"
-    )
-
