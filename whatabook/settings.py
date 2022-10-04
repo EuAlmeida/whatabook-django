@@ -68,12 +68,18 @@ WSGI_APPLICATION = "whatabook.wsgi.application"
 
 DATABASES = {
     "default": {
+        # default
         "ENGINE": "django.db.backends.postgresql",
+        # database
         "NAME": "railway",
+        # pguser
         "USER":"postgres",
-        "PASSWORD":"LsgOjhWbtevQsN4rPfNG",
-        "HOST":"containers-us-west-57.railway.app",
-        "PORT": "5598", 
+        # pgpass
+        "PASSWORD":"4DxrW60eVd09C0ORxegg",
+        # pghost
+        "HOST":"containers-us-west-73.railway.app",
+        # pgport
+        "PORT": "7151", 
     }
 }
 
