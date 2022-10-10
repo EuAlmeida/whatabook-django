@@ -6,4 +6,4 @@ from core.models import user
 class userSerializer(ModelSerializer):
     class Meta:
         model = user
-        fields = "__all__"
+        fields = ['password', 'username', 'first_name', 'last_name', 'email', 'cpf', 'telefone']
