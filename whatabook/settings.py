@@ -2,10 +2,12 @@
 import os
 from pathlib import Path
 
+from decouple import config
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = "django-insecure-pyjo8d5z7dm-ff^=ud#1!^ww(w-s5zs5szivw%^--rk!$e@t_4"
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -71,15 +73,15 @@ DATABASES = {
         # default
         "ENGINE": "django.db.backends.postgresql",
         # database
-        "NAME": "railway",
+        "NAME": config("DATABASE"),
         # pguser
-        "USER":"postgres",
+        "USER": config("PGUSER"),
         # pgpass
-        "PASSWORD":"4DxrW60eVd09C0ORxegg",
+        "PASSWORD": config("PGPASSWORD"),
         # pghost
-        "HOST":"containers-us-west-73.railway.app",
+        "HOST": config("PGHOST"),
         # pgport
-        "PORT": "7151", 
+        "PORT": config("PGPORT"), 
     }
 }
 
