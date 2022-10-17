@@ -1,4 +1,3 @@
-
 import os
 from pathlib import Path
 
@@ -25,8 +24,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "corsheaders",
     "rest_framework",
-    'cpf_field',
-    'django_cpf_cnpj',
+    "cpf_field",
+    "django_cpf_cnpj",
     "drf_spectacular",
     "rest_framework_simplejwt",
     "core",
@@ -49,7 +48,7 @@ ROOT_URLCONF = "whatabook.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, 'images')],
+        "DIRS": [os.path.join(BASE_DIR, "images")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -81,7 +80,7 @@ DATABASES = {
         # pghost
         "HOST": config("PGHOST"),
         # pgport
-        "PORT": config("PGPORT"), 
+        "PORT": config("PGPORT"),
     }
 }
 
@@ -123,16 +122,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {
@@ -151,4 +148,14 @@ SPECTACULAR_SETTINGS = {
     "VERSION": "1.0.0",
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://*.up.railway.app','https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ["https://*.up.railway.app", "https://*.127.0.0.1"]
+
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
+AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID")
+
+AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY")
+
+AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME")
+
+AWS_QUERYSTRING_AUTH = False
