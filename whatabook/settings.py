@@ -69,18 +69,8 @@ WSGI_APPLICATION = "whatabook.wsgi.application"
 
 DATABASES = {
     "default": {
-        # default
-        "ENGINE": "django.db.backends.postgresql",
-        # database
-        "NAME": config("DATABASE"),
-        # pguser
-        "USER": config("PGUSER"),
-        # pgpass
-        "PASSWORD": config("PGPASSWORD"),
-        # pghost
-        "HOST": config("PGHOST"),
-        # pgport
-        "PORT": config("PGPORT"),
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
