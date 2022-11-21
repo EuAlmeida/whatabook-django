@@ -4,4 +4,4 @@ from .editora import editoraViewSet
 from .listafav import listafavViewSet
 from .livro import livroViewSet
 from .resenha import resenhaViewSet
-from .user import userViewSet
+from .user import userViewSet, UsuarioLogado

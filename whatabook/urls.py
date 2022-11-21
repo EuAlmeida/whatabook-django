@@ -19,6 +19,7 @@ from core.views import (
     livroViewSet,
     resenhaViewSet,
     userViewSet,
+    UsuarioLogado
 )
 
 router = DefaultRouter()
@@ -29,6 +30,7 @@ router.register(r'autor', autorViewSet)
 router.register(r'user', userViewSet)
 router.register(r'listafav', listafavViewSet)
 router.register(r'resenha',resenhaViewSet)
+router.register(r'detail-user', UsuarioLogado, basename="usuariologado")
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
