@@ -1,7 +1,7 @@
 from rest_framework.serializers import ModelSerializer
 from rest_framework.fields import SerializerMethodField
 
-from core.serializers.resenha import resenhaSerializer
+from core.serializers.resenha import resenhaSerializer, resenhadetailSerializer
 from core.models import livro
 
 
@@ -13,7 +13,7 @@ class livroSerializer(ModelSerializer):
 
 
 class livrodetailSerializer(ModelSerializer):
-    resenha = resenhaSerializer(many=True)
+    resenha = resenhadetailSerializer(many=True)
     medianota = SerializerMethodField()
     class Meta:
         model = livro
@@ -27,4 +27,4 @@ class livrodetailSerializer(ModelSerializer):
             for i in resenhas:
                 notas.append(i.nota_resenha)
             return sum(notas) / len(notas)
-        return 5
+        return 0
