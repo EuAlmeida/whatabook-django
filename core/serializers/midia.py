@@ -5,5 +5,6 @@ from drf_extra_fields.fields import Base64ImageField
 
 class midiaSerializer(ModelSerializer):
     imagem = Base64ImageField()
-    model = midia
-    fields = "__all__"
+    class Meta:
+        model = midia
+        fields = "__all__"
