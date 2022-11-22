@@ -16,10 +16,10 @@ class resenha(models.Model):
     titulo_resenha = models.CharField(max_length=100, null=False)
     desc_resenha = models.TextField(null=False)
     livro_resenha = models.ForeignKey(
-        livro, on_delete=models.PROTECT, related_name="resenha"
+        livro, on_delete=models.CASCADE, related_name="resenha"
     )
     nota_resenha = models.IntegerField(null=False, choices=nota_choices)
     user_resenha = models.ForeignKey(
-        user, on_delete=models.PROTECT, related_name="resenha"
+        user, on_delete=models.CASCADE, related_name="resenha"
     )
     
