@@ -5,3 +5,4 @@ from .listafav import listafavdetailSerializer, listafavSerializer
 from .livro import livrodetailSerializer, livroSerializer
 from .resenha import resenhadetailSerializer, resenhaSerializer
 from .user import userSerializer
+from .midia import midiaSerializer
