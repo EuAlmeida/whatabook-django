@@ -30,7 +30,7 @@ router.register(r'livro', livroViewSet)
 router.register(r'autor', autorViewSet)
 router.register(r'user', userViewSet)
 router.register(r'listafav', listafavViewSet)
-router.register(r'resenha',resenhaViewSet)
+router.register(r'resenha',resenhaViewSet, basename="resenha")
 router.register(r'detail-user', UsuarioLogado, basename="usuariologado")
 router.register(r'midia', midiaViewSet)
 urlpatterns = [
