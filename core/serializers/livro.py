@@ -13,7 +13,7 @@ class livroSerializer(ModelSerializer):
 
 
 class livrodetailSerializer(ModelSerializer):
-    resenha = resenhadetailSerializer(many=True)
+    resenha = resenhaSerializer(many=True)
     medianota = SerializerMethodField()
     class Meta:
         model = livro
