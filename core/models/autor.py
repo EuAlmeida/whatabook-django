@@ -6,7 +6,7 @@ class autor(models.Model):
     desc_autor = models.TextField()
     autor_nasc = models.DateField(null=False)
     autor_falecimento = models.DateField(null=True, blank= True)
-
+    autor_imagem = models.ImageField(upload_to="images/", null=True, blank=True)
     def __str__(self):
         return self.nome_autor
 
