@@ -2,7 +2,7 @@ from rest_framework.viewsets import ModelViewSet
 
 from core.models import livro
 from core.serializers import livrodetailSerializer, livroSerializer
-from core.paginations import ResenhaPagination
+from core.paginations import LivrosAutorPagination
 
 
 class livroViewSet(ModelViewSet):
@@ -15,7 +15,7 @@ class livroViewSet(ModelViewSet):
     
 class livrosAutorView(ModelViewSet):
     serializer_class = livrodetailSerializer
-    pagination_class = ResenhaPagination
+    pagination_class = LivrosAutorPagination
     def get_queryset(self):
         queryset = livro.objects.all()
         autor = self.request.query_params.get('autor')
