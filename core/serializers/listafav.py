@@ -1,9 +1,9 @@
-from rest_framework.serializers import ModelSerializer
-
+from rest_framework.serializers import ModelSerializer, HiddenField, CurrentUserDefault
 from core.models import listafav
 
 
 class listafavSerializer(ModelSerializer):
+    user_lista = HiddenField(default=CurrentUserDefault())
     class Meta:
         model = listafav
         fields  = "__all__"
