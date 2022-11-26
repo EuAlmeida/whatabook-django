@@ -5,7 +5,10 @@ from core.serializers import listafavdetailSerializer, listafavSerializer
 
 
 class listafavViewSet(ModelViewSet):
-    queryset = listafav.objects.all()
+    def get_queryset(self):
+        queryset = listafav.objects.filter(user_lista=self.request.user)
+        return queryset 
+    
     serializer_class = listafavSerializer
     queryset = listafav.objects.all()
     def get_serializer_class(self):
