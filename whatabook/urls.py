@@ -20,13 +20,15 @@ from core.views import (
     resenhaViewSet,
     userViewSet,
     UsuarioLogado,
-    midiaViewSet
+    midiaViewSet,
+    livrosAutorView
 )
 
 router = DefaultRouter()
 router.register(r'categorias', categoriaViewSet)
 router.register(r'editora', editoraViewSet)
-router.register(r'livro', livroViewSet, basename='livro')
+router.register(r'livro', livroViewSet)
+router.register(r'livros-autor', livrosAutorView, basename='livro')
 router.register(r'autor', autorViewSet)
 router.register(r'user', userViewSet)
 router.register(r'listafav', listafavViewSet)
