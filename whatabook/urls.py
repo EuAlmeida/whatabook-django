@@ -16,6 +16,7 @@ from core.views import (
     categoriaViewSet,
     editoraViewSet,
     listafavViewSet,
+    listafavPKView,
     livroViewSet,
     resenhaViewSet,
     userViewSet,
@@ -32,6 +33,7 @@ router.register(r'livros-autor', livrosAutorView, basename='livro')
 router.register(r'autor', autorViewSet)
 router.register(r'user', userViewSet)
 router.register(r'listafav', listafavViewSet)
+router.register(r'listafavPK', listafavPKView, basename="lista")
 router.register(r'resenha',resenhaViewSet, basename="resenha")
 router.register(r'detail-user', UsuarioLogado, basename="usuariologado")
 router.register(r'midia', midiaViewSet)
