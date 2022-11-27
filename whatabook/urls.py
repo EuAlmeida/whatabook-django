@@ -14,7 +14,6 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from core.views import (
     autorViewSet,
     categoriaViewSet,
-    editoraViewSet,
     listafavViewSet,
     listafavPKView,
     livroViewSet,
@@ -27,7 +26,6 @@ from core.views import (
 
 router = DefaultRouter()
 router.register(r'categorias', categoriaViewSet)
-router.register(r'editora', editoraViewSet)
 router.register(r'livro', livroViewSet)
 router.register(r'livros-autor', livrosAutorView, basename='livro')
 router.register(r'autor', autorViewSet)
