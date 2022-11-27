@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 
 from core.models import livro
-from core.serializers import livrodetailSerializer, livroSerializer
+from core.serializers import livrodetailSerializer, livroSerializer, livroPostSerializer
 from core.paginations import LivrosAutorPagination
 
 
@@ -10,6 +10,8 @@ class livroViewSet(ModelViewSet):
     def get_serializer_class(self):
         if self.action in ['list', 'retrieve']:
             return livrodetailSerializer
+        elif self.action == 'create':
+            return livroPostSerializer
         return livroSerializer
     queryset = livro.objects.all()
     
