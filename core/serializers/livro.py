@@ -35,4 +35,4 @@ class livroPostSerializer(ModelSerializer):
     capa_livro = Base64ImageField()
     class Meta:
         model = livro
-        fields = ("editora_livro" ,"ano_lancamento", "autor_livros", "capa_livro", "categoria_livro", "isbn", "qtd_paginas", "sinopse_livro", "titulo_livro", "url_compra")
+        fields = ("id", "editora_livro" ,"ano_lancamento", "autor_livros", "capa_livro", "categoria_livro", "isbn", "qtd_paginas", "sinopse_livro", "titulo_livro", "url_compra")
