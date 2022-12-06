@@ -69,8 +69,12 @@ WSGI_APPLICATION = "whatabook.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "railway",
+        "USER": "postgres",
+        "PASSWORD": "cYhXOV9TFHihHAyTHwKG",
+        "HOST": "containers-us-west-35.railway.app",
+        "PORT": "7647",
     }
 }
 
@@ -152,5 +156,5 @@ AWS_QUERYSTRING_AUTH = False
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=180),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=1)
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
